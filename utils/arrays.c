@@ -1,0 +1,60 @@
+#include "../includes/libft.h"
+#include "../includes/push_swap.h"
+
+int *get_array(int argc, char **strs)
+{
+    int *array;
+    int i;
+
+    i = 0;
+    array = (int *)malloc(sizeof(int) * argc);
+    if (!array)
+        exit(0);
+    while (i < argc)
+    {
+        array[i] = ft_simpleatoi(strs[i]);
+        i++;
+    }
+    return (array);
+}
+
+void sort_array(int argc, int *array)
+{
+    int i;
+    int j;
+    int temp;
+
+    i = 0;
+    while (i < argc - 1)
+    {
+        j = i + 1;
+        while (j < argc)
+        {
+            if (array[i] > array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            j++;
+        }
+        i++;
+    }
+}
+
+void output_array(int argc, int *array)
+{
+    int i;
+
+    i = 0;
+    printf("{");
+    while (i < argc)
+    {
+        printf("%d",array[i]);
+        i++;
+        if (i >= argc)
+            break;
+        printf(",");
+    }
+    printf("}\n");
+}
