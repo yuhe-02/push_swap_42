@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:04 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/25 23:33:20 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/06/29 00:28:52 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ void execute(int argc, char **strs)
         put_error();
     create_cross(&stack_a, argc, array, &stack_b);
     sort_array(argc, array);
-    output_array(argc, array);
-    output_cross(stack_a);
     assign_order(stack_a, argc, array);
-    output_cross(stack_a);
+    pattern_three(&stack_a, 0);
+    output_visible(stack_a, stack_b);
 }
 
 // __attribute__((destructor))

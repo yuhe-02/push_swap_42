@@ -1,12 +1,13 @@
 SRCS			=	push_swap.c \
-					libft/ft_split.c libft/ft_strchr.c \
-					libft/ft_strlcpy.c libft/ft_strlen.c \
-					libft/ft_substr.c libft/ft_isdigit.c \
+					libft/ft_split.c libft/ft_strchr.c libft/ft_lstpop.c \
+					libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_lstsize.c \
+					libft/ft_substr.c libft/ft_isdigit.c libft/ft_lstpoplast.c \
 					libft/ft_strcmp.c libft/ft_simpleatoi.c \
 					libft/ft_itoa.c libft/ft_lstadd_back.c \
-					libft/ft_lstlast.c libft/ft_lstadd_front.c \
+					libft/ft_lstadd_front.c \
 					libft/ft_lstnew.c \
-					utils/arrays.c utils/error.c utils/cross.c\
+					utils/arrays.c utils/error.c utils/cross.c \
+					utils/control.c utils/pattern_three.c \
 
 OBJS			= $(SRCS:.c=.o)
 

@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 21:00:32 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/27 22:06:44 by yyamasak         ###   ########.fr       */
+/*   Created: 2024/06/28 23:09:40 by yyamasak          #+#    #+#             */
+/*   Updated: 2024/06/28 23:13:07 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include "../includes/push_swap.h"
 
-void	ft_lstadd_front(t_cross **lst, t_cross *new)
+size_t	ft_lstsize(t_cross **stack)
 {
-	if (!lst || !new)
-		return ;
-	new->next = (*lst)->next;
-	new->prev = *lst; 
-	((*lst)->next)->prev = new;
-	(*lst)->next = new;
+	size_t	len;
+	t_cross	*tmp;
+
+	len = 0;
+	if (!stack)
+		return (len);
+	tmp = (*stack)->next;
+	while (tmp->rank != -1)
+	{
+		len++;
+		tmp = tmp->next;
+	}
+	return (len);
 }

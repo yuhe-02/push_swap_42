@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/25 23:33:14 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/06/29 00:23:28 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,22 @@ typedef struct s_cross
 // void start_with_array(int argc, char **argv, int *stack);
 // t_cross	*ft_lstnew(int order, int rank, int value);
 // size_t ft_strlen(const char *s);
-void check_basicerror(int argc, char* argv[]);
-int	is_valid_numbers(int argc, int *array, char **strs);
-void put_error();
-int *get_array(int argc, char **strs);
-void start_with_array(int argc, char **argv);
-void start_with_split(char *nums);
-void execute(int argc, char **strs);
+void	check_basicerror(int argc, char* argv[]);
+int		is_valid_numbers(int argc, int *array, char **strs);
+void	put_error();
+int		*get_array(int argc, char **strs);
+void	start_with_array(int argc, char **argv);
+void	start_with_split(char *nums);
+void	execute(int argc, char **strs);
 void	create_cross(t_cross **stack, int argc, int *array, t_cross **stack_b);
-void output_array(int argc, int *array);
+void	output_array(int argc, int *array);
 void	output_cross(t_cross *stack);
-void sort_array(int argc, int *array);
-void assign_order(t_cross *stack, int argc, int *array);
+void	sort_array(int argc, int *array);
+void	assign_order(t_cross *stack, int argc, int *array);
+void	ft_push(t_cross **target, t_cross **src, int flag);
+void	ft_swap(t_cross **target, int flag);
+void	ft_rotate(t_cross **stack, int flag);
+void	ft_reverse_rotate(t_cross **stack, int flag);
+void	pattern_three(t_cross **stack, int flag);
+void	output_visible(t_cross *stack1, t_cross *stack2);
 #endif
