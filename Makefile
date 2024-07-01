@@ -7,7 +7,9 @@ SRCS			=	push_swap.c \
 					libft/ft_lstadd_front.c \
 					libft/ft_lstnew.c \
 					utils/arrays.c utils/error.c utils/cross.c \
-					utils/control.c utils/pattern_three.c \
+					utils/control.c utils/pattern_three.c utils/control2.c \
+					utils/pattern_four.c utils/look_for_position.c \
+					utils/pattern_five.c \
 
 OBJS			= $(SRCS:.c=.o)
 

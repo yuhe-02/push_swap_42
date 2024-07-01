@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pattern_five.c                                     :+:      :+:    :+:   */
+/*   look_for_position.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 00:31:14 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 22:27:12 by yyamasak         ###   ########.fr       */
+/*   Created: 2024/07/01 21:58:40 by yyamasak          #+#    #+#             */
+/*   Updated: 2024/07/01 21:58:42 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/libft.h"
 
-void	pattern_five(t_cross **stack1, t_cross **stack2, int flag)
+int	look_for_minpos(t_cross **stack1)
 {
-	int	pos;
+	int		index;
+	int		col;
+	int		value;
+	t_cross	*tmp;
 
-	pos = look_for_minpos(stack1);
-	if (pos <= 3)
+	index = 1;
+	col = 1;
+	value = INT_MAX;
+	tmp = (*stack1)->next;
+	while (tmp->rank != -1)
 	{
-		while (pos > 1)
+		if (value > tmp->value)
 		{
-			ft_rotate(stack1, 0);
-			pos--;
+			value = tmp->value;
+			col = index; 
 		}
+		tmp = tmp->next;
+		index++;
 	}
-	else
-		while (5 - pos >= 0)
-		{
-			ft_reverse_rotate(stack1, 0);
-			pos++;
-		}
-	ft_push(stack2, stack1, 1);
-	pattern_four(stack1, stack2, 0);
-	ft_push(stack1, stack2, 0);
+	return (col);
 }

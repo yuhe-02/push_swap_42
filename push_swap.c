@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:04 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/29 00:28:52 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:30:37 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ void start_with_split(char *nums)
     execute(words_len, strs);
 }
 
+void    execute_adjusting_size(t_cross **stack_a, t_cross **stack_b, int argc)
+{
+    if (is_already_sorted(stack_a))
+        return ;
+    if (argc == 3)
+        pattern_three(stack_a, 0);
+    if (argc == 4)
+        pattern_four(stack_a, stack_b, 0);
+    if (argc == 5)
+        pattern_five(stack_a, stack_b, 0);
+    // else
+    //     precure_sort(stack_a, stack_b, 0);
+}
+
 void execute(int argc, char **strs)
 {
     int *array;
@@ -42,8 +56,9 @@ void execute(int argc, char **strs)
     create_cross(&stack_a, argc, array, &stack_b);
     sort_array(argc, array);
     assign_order(stack_a, argc, array);
-    pattern_three(&stack_a, 0);
-    output_visible(stack_a, stack_b);
+    // output_visible(stack_a, stack_b);
+    execute_adjusting_size(&stack_a, &stack_b, argc);
+    // output_visible(stack_a, stack_b);
 }
 
 // __attribute__((destructor))

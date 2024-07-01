@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:11:03 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/29 00:09:37 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/01 21:30:24 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_push(t_cross **target, t_cross **src, int flag)
 	ft_lstadd_front(target, tmp);
 	if (!flag)
 		write(1, "pa\n", 3);
-	else
+	if (flag == 1)
 		write(1, "pb\n", 3);
 }
 
@@ -44,7 +44,7 @@ void	ft_swap(t_cross **target, int flag)
 	third->prev = first;
 	if (!flag)
 		write(1, "sa\n", 3);
-	else
+	if (flag == 1)
 		write(1, "sb\n", 3);
 }
 
@@ -56,7 +56,7 @@ void	ft_rotate(t_cross **stack, int flag)
 	ft_lstadd_back(stack, tmp);
 	if (!flag)
 		write(1, "ra\n", 3);
-	else
+	if (flag == 1)
 		write(1, "rb\n", 3);
 }
 
@@ -68,6 +68,6 @@ void	ft_reverse_rotate(t_cross **stack, int flag)
 	ft_lstadd_front(stack, tmp);
 	if (!flag)
 		write(1, "rra\n", 4);
-	else
+	if (flag == 1)
 		write(1, "rrb\n", 4);
 }

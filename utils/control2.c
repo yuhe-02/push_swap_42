@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pattern_five.c                                     :+:      :+:    :+:   */
+/*   control2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/29 00:31:14 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 22:27:12 by yyamasak         ###   ########.fr       */
+/*   Created: 2024/07/01 21:30:14 by yyamasak          #+#    #+#             */
+/*   Updated: 2024/07/01 21:31:53 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/libft.h"
 
-void	pattern_five(t_cross **stack1, t_cross **stack2, int flag)
+void	ft_rotate_sametime(t_cross **stack_a, t_cross **stack_b)
 {
-	int	pos;
+	ft_rotate(stack_a, 2);
+	ft_rotate(stack_b, 2);
+	write(1, "rr\n", 3);
+}
 
-	pos = look_for_minpos(stack1);
-	if (pos <= 3)
-	{
-		while (pos > 1)
-		{
-			ft_rotate(stack1, 0);
-			pos--;
-		}
-	}
-	else
-		while (5 - pos >= 0)
-		{
-			ft_reverse_rotate(stack1, 0);
-			pos++;
-		}
-	ft_push(stack2, stack1, 1);
-	pattern_four(stack1, stack2, 0);
-	ft_push(stack1, stack2, 0);
+void	ft_reverse_rotate_sametime(t_cross **stack_a, t_cross **stack_b)
+{
+	ft_reverse_rotate(stack_a, 2);
+	ft_reverse_rotate(stack_b, 2);
+	write(1, "rrr\n", 4);
+}
+
+void	ft_swap_sametime(t_cross **stack_a, t_cross **stack_b)
+{
+	ft_swap(stack_a, 2);
+	ft_swap(stack_b, 2);
+	write(1, "ss\n", 3);
 }

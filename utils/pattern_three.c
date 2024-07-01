@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 23:44:08 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/29 00:33:20 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/01 21:15:21 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	pattern_three(t_cross **stack, int flag)
 		return ;
 	else if (array[0] < array[2] && array[2] < array[1])
 	{
-		write(1, "work\n", 5);
 		ft_reverse_rotate(stack, flag);
 		ft_swap(stack, flag);
 	}

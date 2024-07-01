@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:09:47 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/29 00:26:04 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/01 21:13:24 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,23 @@ void assign_order(t_cross *stack, int argc, int *array)
 		}
 		stack = stack->next;
 	}
+}
+
+int	is_already_sorted(t_cross **stack)
+{
+	int		value;
+	t_cross *tmp;
+
+	value = -1;
+	tmp = (*stack)->next;
+	while (tmp->rank != -1)
+	{
+		if (value > tmp->rank)
+			return (0);
+		value = tmp->rank;
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
 void	output_cross(t_cross *stack)

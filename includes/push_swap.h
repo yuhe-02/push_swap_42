@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/29 00:23:28 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:26:23 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,11 @@ void	ft_rotate(t_cross **stack, int flag);
 void	ft_reverse_rotate(t_cross **stack, int flag);
 void	pattern_three(t_cross **stack, int flag);
 void	output_visible(t_cross *stack1, t_cross *stack2);
+int		is_already_sorted(t_cross **stack);
+void	ft_rotate_sametime(t_cross **stack_a, t_cross **stack_b);
+void	ft_reverse_rotate_sametime(t_cross **stack_a, t_cross **stack_b);
+void	ft_swap_sametime(t_cross **stack_a, t_cross **stack_b);
+int		look_for_minpos(t_cross **stack1);
+void	pattern_four(t_cross **stack1, t_cross **stack2, int flag);
+void	pattern_five(t_cross **stack1, t_cross **stack2, int flag);
 #endif
