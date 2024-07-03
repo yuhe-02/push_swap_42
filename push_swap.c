@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:04 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 22:30:37 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/01 22:58:31 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void    execute_adjusting_size(t_cross **stack_a, t_cross **stack_b, int argc)
         pattern_four(stack_a, stack_b, 0);
     if (argc == 5)
         pattern_five(stack_a, stack_b, 0);
-    // else
-    //     precure_sort(stack_a, stack_b, 0);
+    else
+        precure_sort(stack_a, stack_b, argc);
 }
 
 void execute(int argc, char **strs)

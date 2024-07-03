@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   look_for_position.c                                :+:      :+:    :+:   */
+/*   look_for_position2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:58:40 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 23:57:28 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/02 23:28:39 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/libft.h"
 
-int	look_for_minpos(t_cross **stack1)
+int	look_for_minpos2(t_cross **stack1)
 {
 	int		index;
 	int		col;
@@ -37,7 +37,7 @@ int	look_for_minpos(t_cross **stack1)
 	return (col);
 }
 
-int	search_under_limit(t_cross **stack1, int limit)
+int	search_under_limit2(t_cross **stack1, int limit, int *value)
 {
 	int		index;
 	t_cross	*tmp;
@@ -47,14 +47,17 @@ int	search_under_limit(t_cross **stack1, int limit)
 	while (tmp->rank != -1)
 	{
 		if (tmp->rank <= limit)
+		{
+			*value = tmp->rank;
 			return (index);
+		}
 		tmp = tmp->next;
 		index++;
 	}
 	return (index);
 }
 
-int	rv_search_under_limit(t_cross **stack1, int limit)
+int	rv_search_under_limit2(t_cross **stack1, int limit, int *value)
 {
 	int		index;
 	t_cross	*tmp;
@@ -64,14 +67,17 @@ int	rv_search_under_limit(t_cross **stack1, int limit)
 	while (tmp->rank != -1)
 	{
 		if (tmp->rank <= limit)
+		{
+			*value = tmp->rank;
 			return (index);
+		}
 		tmp = tmp->prev;
 		index--;
 	}
 	return (index);
 }
 
-int search_value(t_cross **stack, int value)
+int search_value2(t_cross **stack, int value)
 {
 	int		index;
 	t_cross	*tmp;

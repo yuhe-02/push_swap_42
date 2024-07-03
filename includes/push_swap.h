@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 22:26:23 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/03 23:35:59 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,12 @@ void	ft_swap_sametime(t_cross **stack_a, t_cross **stack_b);
 int		look_for_minpos(t_cross **stack1);
 void	pattern_four(t_cross **stack1, t_cross **stack2, int flag);
 void	pattern_five(t_cross **stack1, t_cross **stack2, int flag);
+int	search_under_limit(t_cross **stack1, int limit);
+int	rv_search_under_limit(t_cross **stack1, int limit);
+void	precure_sort(t_cross **stack_a, t_cross **stack_b, int argc);
+int search_value(t_cross **stack, int value);
+
+int	search_under_limit2(t_cross **stack1, int limit, int *value);
+int	rv_search_under_limit2(t_cross **stack1, int limit, int *value);
+int get_max(t_cross **stack);
 #endif
