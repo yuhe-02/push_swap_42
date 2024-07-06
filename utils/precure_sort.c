@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 22:57:44 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/03 23:53:39 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/06 16:10:55 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,84 +18,32 @@ int decide_range(int argc)
 	return (argc / 6);
 }
 
-void	move_to_b(t_cross **stack_a, t_cross **stack_b, int argc)
-{
-	int	col_max = 25;
-	int forward;
-	int count;
-	int num;
-	int flg;
-	int	num2;
-	
-	num = 1;
-	num2 = (argc / col_max) * 0.8;
-	while (argc > 0)
-	{
-		count = 0;
-		forward = search_under_limit(stack_a, col_max);
-		flg = 0;
-		while (count < forward)
-		{
-			if (((*stack_b)->next)->rank >= get_max(stack_b) - num2 && !flg)
-			{
-				ft_rotate_sametime(stack_a, stack_b);
-				flg = 1;
-			}
-			else
-				ft_rotate(stack_a, 0);
-			count++;
-		}
-		ft_push(stack_b, stack_a, 1);
-		if (num >= 2 && ((*stack_b)->next)->rank < (((*stack_b)->next)->next)->rank)
-		{
-			if (((*stack_a)->next)->rank < (((*stack_a)->next)->next)->rank)
-				ft_swap_sametime(stack_a, stack_b);
-			else
-				ft_swap(stack_b, 1);
-		}
-		col_max++;
-		argc--;
-		num++;
-	}
-}
-
 // void	move_to_b(t_cross **stack_a, t_cross **stack_b, int argc)
 // {
-// 	int	col_max = 20;
-// 	int forward[2];
+// 	int	col_max = 25;
+// 	int forward;
 // 	int count;
 // 	int num;
 // 	int flg;
-// 	int backward[2];
+// 	int	num2;
 	
-// 	num = argc;
+// 	num = 1;
+// 	num2 = (argc / col_max) * 0.8;
 // 	while (argc > 0)
 // 	{
 // 		count = 0;
-// 		forward[0] = search_under_limit2(stack_a, col_max, &forward[1]);
-// 		backward[0] = rv_search_under_limit2(stack_a, col_max, &backward[1]);
+// 		forward = search_under_limit(stack_a, col_max);
 // 		flg = 0;
-// 		if (forward[0] < argc - backward[0])
+// 		while (count < forward)
 // 		{
-// 			while (count < forward[0])
+// 			if (((*stack_b)->next)->rank >= get_max(stack_b) - num2 && !flg)
 // 			{
-// 				if (((*stack_b)->next)->rank >= col_max*0.7 && (num - argc) % 2 == 0 && !flg)
-// 				{
-// 					ft_rotate_sametime(stack_a, stack_b);
-// 					flg = 1;
-// 				}
-// 				else
-// 					ft_rotate(stack_a, 0);
-// 				count++;
+// 				ft_rotate_sametime(stack_a, stack_b);
+// 				flg = 1;
 // 			}
-// 		}
-// 		else
-// 		{
-// 			while (count < argc - backward[0])
-// 			{
-// 				ft_reverse_rotate(stack_a, 0);
-// 				count++;
-// 			}
+// 			else
+// 				ft_rotate(stack_a, 0);
+// 			count++;
 // 		}
 // 		ft_push(stack_b, stack_a, 1);
 // 		if (num >= 2 && ((*stack_b)->next)->rank < (((*stack_b)->next)->next)->rank)
@@ -105,12 +53,39 @@ void	move_to_b(t_cross **stack_a, t_cross **stack_b, int argc)
 // 			else
 // 				ft_swap(stack_b, 1);
 // 		}
-// 		// if (((*stack_b)->next)->rank >= col_max*0.7 && (num - argc) % 2 == 0)
-// 		// 	ft_rotate(stack_b, 1);
 // 		col_max++;
 // 		argc--;
+// 		num++;
 // 	}
 // }
+
+void	move_to_b(t_cross **stack_a, t_cross **stack_b, int argc)
+{
+	int	col_max = argc / 12;
+	int	num2;
+
+	num2 = col_max * 0.8;
+	while (argc > 0)
+	{
+		if ((*stack_a)->next->rank < col_max)
+		{
+			ft_push(stack_b, stack_a, 1);
+			if (((*stack_b)->next)->rank >= get_max(stack_b) - num2)
+			{
+				if ((*stack_a)->next->rank > col_max)
+					ft_rotate_sametime(stack_a, stack_b);
+				else
+					ft_rotate(stack_b, 1);
+			}
+			else if (ft_lstsize(stack_b) > 2 && ((*stack_b)->next)->rank < (((*stack_b)->next)->next)->rank)
+				ft_swap(stack_b, 1);
+		}
+		else
+			ft_rotate(stack_a, 0);
+		col_max++;
+		argc--;
+	}
+}
 
 void	move_to_a(t_cross **stack_a, t_cross **stack_b, int argc)
 {
