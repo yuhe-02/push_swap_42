@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/03 23:35:59 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/13 21:33:54 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,13 @@ typedef struct s_cross
 	int				value;
 }					t_cross;
 
-// void start_with_split(char **argv);
-// void start_with_array(int argc, char **argv, int *stack);
-// t_cross	*ft_lstnew(int order, int rank, int value);
-// size_t ft_strlen(const char *s);
-void	check_basicerror(int argc, char* argv[]);
+void	check_basicerror(int argc, char *argv[]);
 int		is_valid_numbers(int argc, int *array, char **strs);
-void	put_error();
+void	put_error(int flag);
 int		*get_array(int argc, char **strs);
 void	start_with_array(int argc, char **argv);
 void	start_with_split(char *nums);
-void	execute(int argc, char **strs);
+void	execute(int argc, char **strs, int flg);
 void	create_cross(t_cross **stack, int argc, int *array, t_cross **stack_b);
 void	output_array(int argc, int *array);
 void	output_cross(t_cross *stack);
@@ -55,12 +51,14 @@ void	ft_swap_sametime(t_cross **stack_a, t_cross **stack_b);
 int		look_for_minpos(t_cross **stack1);
 void	pattern_four(t_cross **stack1, t_cross **stack2, int flag);
 void	pattern_five(t_cross **stack1, t_cross **stack2, int flag);
-int	search_under_limit(t_cross **stack1, int limit);
-int	rv_search_under_limit(t_cross **stack1, int limit);
+int		search_under_limit(t_cross **stack1, int limit);
+int		rv_search_under_limit(t_cross **stack1, int limit);
 void	precure_sort(t_cross **stack_a, t_cross **stack_b, int argc);
-int search_value(t_cross **stack, int value);
-
-int	search_under_limit2(t_cross **stack1, int limit, int *value);
-int	rv_search_under_limit2(t_cross **stack1, int limit, int *value);
-int get_max(t_cross **stack);
+int		search_value(t_cross **stack, int value);
+int		search_under_limit2(t_cross **stack1, int limit, int *value);
+int		rv_search_under_limit2(t_cross **stack1, int limit, int *value);
+int		decide_range(int argc);
+void	opt_by_rotate(t_cross **sa, t_cross **sb, int nums[5]);
+void	free_nodes(t_cross **stack_a, t_cross **stack_b);
+void	free_str_array(char **str);
 #endif

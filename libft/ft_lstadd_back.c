@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 21:00:20 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/25 22:42:34 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/10 23:28:44 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_lstadd_back(t_cross **lst, t_cross *new)
 {
-	t_cross *last;
+	t_cross	*last;
 
 	if (!(lst) || !(new))
 		return ;
@@ -23,14 +23,14 @@ void	ft_lstadd_back(t_cross **lst, t_cross *new)
 	{
 		last = (*lst)->prev;
 		last->next = new;
-        new->prev = last;
-        new->next = *lst;
-        (*lst)->prev = new;
+		new->prev = last;
+		new->next = *lst;
+		(*lst)->prev = new;
 	}
 	else
 	{
 		new->next = new;
-        new->prev = new;
-        *lst = new;
+		new->prev = new;
+		*lst = new;
 	}
 }

@@ -6,17 +6,18 @@ SRCS			=	push_swap.c \
 					libft/ft_itoa.c libft/ft_lstadd_back.c \
 					libft/ft_lstadd_front.c \
 					libft/ft_lstnew.c \
-					utils/arrays.c utils/error.c utils/cross.c \
+					utils/arrays.c utils/error.c utils/cross.c utils/error2.c \
 					utils/control.c utils/pattern_three.c utils/control2.c \
 					utils/pattern_four.c utils/look_for_position.c utils/look_for_position2.c \
-					utils/pattern_five.c utils/precure_sort.c \
+					utils/pattern_five.c utils/precure_sort.c utils/optimize.c \
+					utils/frees.c \
 
 OBJS			= $(SRCS:.c=.o)
 
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -Iincludes/.
+CFLAGS			= -Wall -Wextra -Werror -Iincludes/. -g -fsanirize=address
 CFLAGS			= -Iincludes/.
 
 NAME			= push_swap

@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:11:03 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 21:30:24 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/10 23:41:36 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ft_push(t_cross **target, t_cross **src, int flag)
 void	ft_swap(t_cross **target, int flag)
 {
 	t_cross	*first;
-	t_cross *second;
-	t_cross *third;
+	t_cross	*second;
+	t_cross	*third;
 
 	first = (*target)->next;
 	second = first->next;
