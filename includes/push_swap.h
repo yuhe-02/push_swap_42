@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/13 21:33:54 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/16 23:04:27 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	start_with_array(int argc, char **argv);
 void	start_with_split(char *nums);
 void	execute(int argc, char **strs, int flg);
 void	create_cross(t_cross **stack, int argc, int *array, t_cross **stack_b);
-void	output_array(int argc, int *array);
-void	output_cross(t_cross *stack);
 void	sort_array(int argc, int *array);
 void	assign_order(t_cross *stack, int argc, int *array);
 void	ft_push(t_cross **target, t_cross **src, int flag);
@@ -43,11 +41,10 @@ void	ft_swap(t_cross **target, int flag);
 void	ft_rotate(t_cross **stack, int flag);
 void	ft_reverse_rotate(t_cross **stack, int flag);
 void	pattern_three(t_cross **stack, int flag);
-void	output_visible(t_cross *stack1, t_cross *stack2);
 int		is_already_sorted(t_cross **stack);
-void	ft_rotate_sametime(t_cross **stack_a, t_cross **stack_b);
-void	ft_reverse_rotate_sametime(t_cross **stack_a, t_cross **stack_b);
-void	ft_swap_sametime(t_cross **stack_a, t_cross **stack_b);
+void	ft_rotate_sametime(t_cross **stack_a, t_cross **stack_b, int flag);
+void	ft_reverse_rotate_sametime(t_cross **sa, t_cross **sb, int flag);
+void	ft_swap_sametime(t_cross **stack_a, t_cross **stack_b, int flag);
 int		look_for_minpos(t_cross **stack1);
 void	pattern_four(t_cross **stack1, t_cross **stack2, int flag);
 void	pattern_five(t_cross **stack1, t_cross **stack2, int flag);

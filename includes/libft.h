@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:51:29 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/11 00:14:42 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/16 22:57:04 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ t_cross	*ft_lstnew(int value, int rank);
 t_cross	*ft_lstpop(t_cross **lst);
 size_t	ft_lstsize(t_cross **stack);
 t_cross	*ft_lstpoplast(t_cross **lst);
+char	*ft_strdup(const char *s);
+char	*ft_strjoin_custom(char *s1, char const *s2);
+char	*ft_strndup(char const *s, size_t len);
 #endif
