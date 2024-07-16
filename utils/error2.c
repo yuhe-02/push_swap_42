@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   error2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 22:02:02 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/10 23:30:58 by yyamasak         ###   ########.fr       */
+/*   Created: 2024/07/10 23:44:34 by yyamasak          #+#    #+#             */
+/*   Updated: 2024/07/13 21:37:26 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
+#include "../includes/push_swap.h"
+#include "../includes/libft.h"
+
+void	put_error(int flag)
 {
-	while (*s1 != '\0' && *s1 == *s2)
+	if (flag == 42)
+		return ;
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
+
+int	is_valid_numbers(int argc, int *array, char **strs)
+{
+	int		i;
+	char	*str;
+
+	i = 0;
+	while (i < argc)
 	{
-		s1++;
-		s2++;
+		str = ft_itoa(array[i]);
+		if (!str)
+			exit(0);
+		if (ft_strcmp(str, strs[i]) != 0)
+			put_error(1);
+		free(str);
+		i++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (1);
 }

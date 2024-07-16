@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 21:58:40 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 23:57:28 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/10 23:53:48 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	look_for_minpos(t_cross **stack1)
 		if (value > tmp->rank)
 		{
 			value = tmp->rank;
-			col = index; 
+			col = index;
 		}
 		tmp = tmp->next;
 		index++;
@@ -71,7 +71,7 @@ int	rv_search_under_limit(t_cross **stack1, int limit)
 	return (index);
 }
 
-int search_value(t_cross **stack, int value)
+int	search_value(t_cross **stack, int value)
 {
 	int		index;
 	t_cross	*tmp;
@@ -85,5 +85,5 @@ int search_value(t_cross **stack, int value)
 		tmp = tmp->next;
 		index++;
 	}
-	return (index);	
+	return (index);
 }

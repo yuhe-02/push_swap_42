@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 22:02:02 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/10 23:30:58 by yyamasak         ###   ########.fr       */
+/*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
+/*   Updated: 2024/07/16 22:59:26 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1 != '\0' && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <limits.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
+
+
+char	*finish_process(char **s1, char **s2, char **s3);
+char	*get_next_line(int fd);
+#endif

@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 22:02:02 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/10 23:30:58 by yyamasak         ###   ########.fr       */
+/*   Created: 2024/07/16 22:53:20 by yyamasak          #+#    #+#             */
+/*   Updated: 2024/07/16 22:53:54 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
+#include "../includes/libft.h"
+
+char	*ft_strdup(const char *s)
 {
-	while (*s1 != '\0' && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	char	*dup;
+	char	*str;
+	char	*temp;
+
+	dup = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!(dup))
+		return (NULL);
+	str = (char *)s;
+	temp = dup;
+	while (*str)
+		*temp++ = *str++;
+	*temp = '\0';
+	return (dup);
 }

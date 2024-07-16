@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/29 00:31:14 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/01 22:27:12 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/10 23:55:55 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,13 @@ void	pattern_five(t_cross **stack1, t_cross **stack2, int flag)
 		}
 	}
 	else
+	{
 		while (5 - pos >= 0)
 		{
 			ft_reverse_rotate(stack1, 0);
 			pos++;
 		}
+	}
 	ft_push(stack2, stack1, 1);
 	pattern_four(stack1, stack2, 0);
 	ft_push(stack1, stack2, 0);

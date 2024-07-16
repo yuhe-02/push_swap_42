@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 23:22:34 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/06/25 00:04:31 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/10 23:29:33 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_simpleatoi(const char *str)
 {
 	int	num;
 	int	i;
-	int minusflg;
+	int	minusflg;
 
 	i = 0;
 	minusflg = 1;
