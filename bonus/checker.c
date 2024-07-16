@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 22:32:49 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/16 23:30:40 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/07/16 23:44:53 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,6 @@ void	execute(int argc, char **strs, int flg)
 	t_cross	*stack_a;
 	t_cross	*stack_b;
 
-	if (argc == 1)
-	{
-		write(1, "OK\n", 3);
-		return ;
-	}
 	array = get_array(argc, strs);
 	if (!is_valid_numbers(argc, array, strs))
 		put_error(1);
