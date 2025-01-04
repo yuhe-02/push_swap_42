@@ -6,7 +6,7 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 19:51:29 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/16 22:57:04 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/08/04 14:19:05 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "push_swap.h"
 
 char	**ft_split(char const *s, char c);

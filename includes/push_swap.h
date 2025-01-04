@@ -6,13 +6,12 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 21:49:09 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/16 23:04:27 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/08/04 14:19:00 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>

@@ -6,14 +6,12 @@
 /*   By: yyamasak <yyamasak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:11:03 by yyamasak          #+#    #+#             */
-/*   Updated: 2024/07/10 23:41:36 by yyamasak         ###   ########.fr       */
+/*   Updated: 2024/08/04 14:18:40 by yyamasak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/libft.h"
-
-// 指示文書くためにフラグ引数を追加する
 
 void	ft_push(t_cross **target, t_cross **src, int flag)
 {
@@ -37,14 +35,14 @@ void	ft_swap(t_cross **target, int flag)
 	second = first->next;
 	third = second->next;
 	first->next = third;
+	third->prev = first;
 	first->prev = second;
 	second->next = first;
 	second->prev = (*target);
 	(*target)->next = second;
-	third->prev = first;
 	if (!flag)
 		write(1, "sa\n", 3);
-	if (flag == 1)
+	else if (flag == 1)
 		write(1, "sb\n", 3);
 }
 
